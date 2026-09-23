@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inscription Nouvea client - Méditéranée</title>
+</head>
+<body bgcolor="pink">
+
+	<header>
+		<h1>Inscription d'un nouveau client</h1>
+	</header>
+
+	<section>
+
+		<form action="#" method="post">
+
+			<table width="70%" border="0">
+				
+				<tr> <td> <label for="nom">Nom : </label> </td> 
+				<td> <input type="text" id="nom" name="nom"> </td> </tr>
+				
+				<tr> <td> <label for="prénom">Prénom : </label> </td>
+				 <td> <input type="text" id="prénom" name="prénom"> </td> </tr>
+				
+				<tr> <td> <label for="date_naissance">Date de naissance : </label> </td>
+				<td> <input type="date" id="date_naissance" name="date_naissance"> </td> </tr>
+				
+				<tr> <td> <label for="email">Adresse mail : </label> </td>
+				<td> <input type="text" id="email" name="email"> </td> </tr>
+				
+				<tr> <td> <label for="mdp">Mot de passe :  </label> </td>
+				<td> <input type="text" id="mdp" name="mdp"> </td> </tr>
+				
+				<tr> <td> <label for="permis">Numéro de permis </label> </td>
+				 <td> <input type="text" id="permis" name="permis"> </td> </tr>
+				
+				<tr> <td> <label for="anciennete">Nombre d'années d'ancienneté : </label> </td>
+				<td> <input type="number" id="anciennete" name="anciennete" min="0" max="80"> </td> </tr>
+				
+				<tr> <td> <label for="ville">Ville : </label> </td>
+				 <td> <select id="ville" name="ville">
+					<option value="paris"> paris </option>
+					<option value="versailles"> Versailles </option>
+					<option value="créteil"> Créteil </option>
+				</select> </td> </tr>
+					
+
+				<tr> <td> <label for="adresse">Adresse du client :</label> </td>
+		    	<td> <textarea id="adresse" name="adresse" rows="4" cols="30"></textarea>
+		    	</td> </tr>
+
+		    </table>
+
+
+		    	<p>Situation matrimoniale :</p>
+		    	<label for="marie_oui"> Marié </label>
+		    	<input type="radio" id="marie_oui" name="marie" value="oui">
+		    	<label for="marie_non"> Marié </label>
+		    	<input type="radio" id="marie_non" name="marie" value="non">
+
+		    	<p>Préférences de voitures:</p>
+		    	<label for="pref_auto">Automatique</label>
+		    	<input type="checkbox" id="pref_auto" name="preference auto" value="automatique">
+		    	<label for="pref_manuelle">Manuelle</label>
+		    	<input type="checkbox" id="pref_manuelle" name="preference manuelle" value="manuelle">
+		    	<br>
+
+		    	<button type="submit"> Enregistrer</button>
+		    	<button type="reset"> Annuler</button>
+
+		 </form>
+
+	</section>
+		   
+
+		    <footer>
+		    	<p>&copy; 2026 Agence Méditéranée - Location de véhicules</p>
+		    </footer>
+		      	
+   
+
+</body>
+</html>
