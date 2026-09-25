@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ajout d'un nouveau véhicule - Méditéranée</title>
+</head>
+<body bgcolor="#BA6A5B">
+
+	<header>
+		<h1>Ajout d'un nouveau véhicule</h1>
+	</header>
+
+	<section>
+
+		<form action="#" method="post">
+
+			<table border="0" width="60%">
+
+				<tr> <td> <label for="marque">Marque : </label> </td>
+				<td> <input type="text" id="marque" name="marque"> </td> </tr>
+
+				<tr> <td> <label for="modele">Modèle : </label> </td>
+				<td> <input type="text" id="modele" name="modele"> </td> </tr>
+
+				<tr> <td> <label for="immatriculation">Immatriculation : </label> </td>
+				<td> <input type="text" id="immatriculation" name="immatriculation"> </td> </tr>
+
+				<tr> <td> <label for="date_circulation">Date de mise en circulation : </label> </td>
+				<td> <input type="date" id="date_circulation" name="date_circulation"> </td> </tr>
+
+				<tr> <td> <label for="kilometrage">Kilométrage : </label> </td>
+				<td> <input type="number" id="kilometrage" name="kilometrage" min="0"> </td> </tr>
+
+				<tr> <td> <label for="boite">Type de boîte : </label> </td>
+				<td> <select id="boite" name="boite">
+					<option value="automatique">Automatique</option>
+					<option value="manuelle">Manuelle</option>
+				</select> </td> </tr>
+
+				<tr> <td> <label for="prix">Prix de location journalier (€) : </label> </td>
+				<td> <input type="number" id="prix" name="prix" min="0" step="0.01"> </td> </tr>
+
+				<tr> <td> <label for="ville">Ville de disponibilité : </label> </td>
+				<td> <select id="ville" name="ville">
+					<option value="paris">Paris</option>
+					<option value="versailles">Versailles</option>
+					<option value="créteil">Créteil</option>
+				</select> </td> </tr>
+
+				<tr> <td> <label for="statut">Statut : </label> </td>
+				<td> <select id="statut" name="statut">
+					<option value="disponible">Disponible</option>
+					<option value="loue">Loué</option>
+					<option value="maintenance">En maintenance</option>
+				</select> </td> </tr>
+
+				<tr> <td> <label for="description">Description : </label> </td>
+				<td> <textarea id="description" name="description" rows="4" cols="30"></textarea>
+				</td> </tr>
+
+			</table>
+
+			<br>
+
+			<button type="submit"> Enregistrer</button>
+			<button type="reset"> Annuler</button>
+
+		</form>
+
+	</section>
+
+	<footer>
+		<p>&copy; 2026 Agence Méditéranée - Location de véhicules</p>
+	</footer>
+
+</body>
+</html>
