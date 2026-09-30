@@ -1,0 +1,44 @@
+ body {    
+      font-family: Arial, sans-serif;    
+      background-color: #f4f4f4;    
+      margin: 0;    
+    }   
+
+     
+.titre-principal {    
+      color: white;    
+      background-color: #0b5394;    
+      text-align: center;    
+      padding: 20px;    
+    }  
+
+.sous-titre {    
+      color: #0b5394;    
+      font-size: 24px;    
+      border-bottom: 2px solid #0b5394;    
+    }  
+
+.texte {    
+      font-size: 16px;    
+      line-height: 1.6;    
+      text-align: justify;    
+      color: #333333;    
+    }
+
+.important {    
+      font-weight: bold;    
+      color: #e69138;    
+    }
+
+.bloc {    
+      background-color: white;    
+      border: 1px solid #cccccc;    
+      border-radius: 8px;    
+      padding: 15px;    
+      margin: 20px;    
+    }
+
+.mise-en-avant {    
+      background-color: #fff2cc;    
+      border-left: 5px solid #e69138;    
+    }
