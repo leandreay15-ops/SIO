@@ -1,0 +1,59 @@
+/* Mise en forme générale */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    padding: 40px;
+}
+ 
+/* Libellés */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+ 
+/* Zones de texte */
+input[type="text"] {
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+ 
+/* Effet au clic dans une zone */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff55;
+}
+ 
+/* Bouton Somme */
+button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+ 
+/* Effet au survol */
+button:hover {
+    background-color: #0056b3;
+}
+ 
+/* Zone résultat */
+#resultat {
+    margin-top: 20px;
+    background-color: #e8f0fe;
+    border: 1px solid #007bff;
+    font-weight: bold;
+    color: #0056b3;
+}
