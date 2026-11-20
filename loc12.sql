@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 20 nov. 2026 à 07:49
+-- Généré le : ven. 20 nov. 2026 à 08:19
 -- Version du serveur : 8.0.44
 -- Version de PHP : 8.2.29
 
@@ -66,6 +66,31 @@ INSERT INTO `locations` (`num_location`, `date_location`, `id_client`, `immatric
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `reparations`
+--
+
+CREATE TABLE `reparations` (
+  `num_rep` int NOT NULL,
+  `date_rep` date NOT NULL,
+  `type_panne` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `lieux_rep` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `prix_rep` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `nbr_jour_repos` int NOT NULL,
+  `adresse mécanicien` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `immatriculation` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `reparations`
+--
+
+INSERT INTO `reparations` (`num_rep`, `date_rep`, `type_panne`, `lieux_rep`, `prix_rep`, `nbr_jour_repos`, `adresse mécanicien`, `immatriculation`) VALUES
+(12, '2026-10-14', 'explosion', 'campagne', '400 euros', 15, 'massy', ' 545 BG 856 '),
+(16, '2026-11-11', 'moteur', 'garage', '150 euros', 10, '98 rue des adresses', '464 ZE 354');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `voitures`
 --
 
@@ -103,6 +128,13 @@ ALTER TABLE `locations`
   ADD KEY `immatriculation` (`immatriculation`);
 
 --
+-- Index pour la table `reparations`
+--
+ALTER TABLE `reparations`
+  ADD PRIMARY KEY (`num_rep`),
+  ADD KEY `immatriculation` (`immatriculation`);
+
+--
 -- Index pour la table `voitures`
 --
 ALTER TABLE `voitures`
@@ -118,6 +150,12 @@ ALTER TABLE `voitures`
 ALTER TABLE `locations`
   ADD CONSTRAINT `locations_ibfk_1` FOREIGN KEY (`immatriculation`) REFERENCES `voitures` (`immatriculation`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `locations_ibfk_2` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `reparations`
+--
+ALTER TABLE `reparations`
+  ADD CONSTRAINT `reparations_ibfk_1` FOREIGN KEY (`immatriculation`) REFERENCES `voitures` (`immatriculation`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
