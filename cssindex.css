@@ -1,74 +1,173 @@
-/* Style général de la page */
+/* ====== Couleurs : change-les ici pour retrouver exactement ton thème ====== */
+:root {
+    --fond: #130e0a;
+    --fond-2: #1d140d;
+    --carte: rgba(255, 255, 255, 0.04);
+    --ligne: rgba(255, 255, 255, 0.09);
+    --texte: #f5ece3;
+    --texte-doux: #b5a291;
+    --accent: #ff8a2b;
+    --accent-2: #ff5e3a;
+    --pdf: #ffd166;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { color-scheme: dark; }
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-    color: #ffffff;
     min-height: 100vh;
-    margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: clamp(24px, 5vw, 72px) clamp(16px, 4vw, 40px);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--texte);
+    background:
+        radial-gradient(900px 500px at 12% -10%, rgba(255, 138, 43, 0.18), transparent 60%),
+        radial-gradient(800px 500px at 100% 0%, rgba(255, 94, 58, 0.16), transparent 60%),
+        linear-gradient(180deg, var(--fond), var(--fond-2));
+    background-attachment: fixed;
 }
 
-/* Style du titre principal */
+/* ====== En-tête ====== */
+.intro {
+    max-width: 1000px;
+    margin: 0 auto 36px;
+}
+
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: relative;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: linear-gradient(90deg, #fff 0%, var(--accent) 60%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ff5e62;
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
+.intro p {
+    margin-top: 12px;
+    max-width: 60ch;
+    color: var(--texte-doux);
+    font-size: 1.05rem;
 }
 
-/* Conteneur de la liste */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espace propre entre les éléments */
+/* ====== Tableau ====== */
+.table-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--carte);
+    border: 1px solid var(--ligne);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
 }
 
-/* Style de chaque élément de liste */
-ul li {
-    margin: 0;
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--texte-doux);
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--ligne);
 }
 
-/* Style des liens cliquables */
-ul li a {
-    display: block;
-    padding: 16px 24px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #f1f1f1;
+tbody td {
+    padding: 18px 20px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--ligne);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+tbody tr {
+    transition: background 0.2s ease;
+    box-shadow: inset 3px 0 0 transparent;
+}
+
+tbody tr:hover {
+    background: rgba(255, 138, 43, 0.07);
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* Colonnes */
+th:nth-child(1), td.num { width: 64px; }
+th:nth-child(4), td:nth-child(4) { width: 110px; }
+th:nth-child(2), td:nth-child(2) { width: 34%; }
+
+td.num {
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+td a {
+    color: var(--texte);
+    font-weight: 600;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 2px no-repeat;
+    transition: background-size 0.25s ease, color 0.2s ease;
 }
 
-/* Effets au survol (Hover) */
-ul li a:hover {
-    background: linear-gradient(90deg, #ff9966, #ff5e62);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(255, 94, 98, 0.4);
-    border-color: transparent;
+td a:hover, td a:focus-visible {
+    color: #fff;
+    background-size: 100% 2px;
+    outline: none;
+}
+
+td a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+td.desc {
+    color: var(--texte-doux);
+    max-width: 52ch;
+}
+
+/* Badges de format */
+.tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--accent);
+    background: rgba(255, 138, 43, 0.12);
+    border: 1px solid rgba(255, 138, 43, 0.35);
+}
+
+.tag.pdf {
+    color: var(--pdf);
+    background: rgba(255, 209, 102, 0.12);
+    border-color: rgba(255, 209, 102, 0.35);
+}
+
+/* ====== Mobile : chaque ligne devient une carte ====== */
+@media (max-width: 720px) {
+    thead { display: none; }
+
+    table, tbody, tr, td { display: block; width: 100% !important; }
+
+    tbody tr { padding: 14px 4px; border-bottom: 1px solid var(--ligne); }
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody td { padding: 6px 18px; border: none; }
+
+    tbody td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        color: var(--texte-doux);
+        margin-bottom: 2px;
+    }
+
+    td.num::before { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
 }
